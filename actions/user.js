@@ -37,8 +37,8 @@ export async function updateUser(data){
             data: {
                  industry: data.industry,
                   ...insights,
-                  demandLevel: insights.demandLevel?.toUpperCase(),   // ✅ normalize
-                  marketOutlook: insights.marketOutlook?.toUpperCase(), // ✅ normalize
+                  // demandLevel: insights.demandLevel?.toUpperCase(),   // ✅ normalize
+                  // marketOutlook: insights.marketOutlook?.toUpperCase(), // ✅ normalize
                   nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
   },
 });
