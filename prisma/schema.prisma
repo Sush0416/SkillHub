@@ -21,7 +21,7 @@ model User{
   name                String?
   imageUrl            String?
   industry            String?
-  IndustryInsight IndustryInsight? @relation(fields: [industry],references: [industry]) 
+  industryInsight IndustryInsight? @relation(fields: [industry],references: [industry]) 
   createdAt           DateTime  @default(now())
   updatedAt           DateTime  @updatedAt
 
