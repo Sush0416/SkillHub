@@ -34,8 +34,9 @@ export default function RootLayout({ children }) {
            <Toaster richColors />
 
           <footer className="bg-muted/50 py-12">
-            <div className="container mx-auto px-4 text-center text-gray-200">
-              <p>.</p>
+            <div className="container mx-auto px-4 text-center text-gray-200 ">
+              <p>Made with ❤️ by Team SkillHub </p>
+              <p className="italic">"Keep learning. Keep growing."</p>
             </div>
           </footer>
         </ThemeProvider>
