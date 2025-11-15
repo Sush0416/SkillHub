@@ -5,7 +5,9 @@ import { auth } from "@clerk/nextjs/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ 
+  model: "gemini-1.5-flash" 
+});
 
 export const generateAIInsights = async (industry) => {
   const prompt = `
@@ -15,9 +17,9 @@ export const generateAIInsights = async (industry) => {
               { "role": "string", "min": number, "max": number, "median": number, "location": "string" }
             ],
             "growthRate": number,
-            "demandLevel": "HIGH" | "MEDIUM" | "LOW",
+            "demandLevel": "High" | "Medium" | "Low",
             "topSkills": ["skill1", "skill2"],
-            "marketOutlook": "POSITIVE" | "NEUTRAL" | "NEGATIVE",
+            "marketOutlook": "Positive" | "Neutral" | "Negative",
             "keyTrends": ["trend1", "trend2"],
             "recommendedSkills": ["skill1", "skill2"]
           }
@@ -57,7 +59,7 @@ export async function getIndustryInsights() {
       data: {
         industry: user.industry,
         ...insights,
-        nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),//1 week time
+        nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       },
     });
 

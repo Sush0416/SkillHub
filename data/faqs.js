@@ -12,7 +12,7 @@ export const faqs = [
   {
     question: "Can I access SkillHub on mobile?",
     answer:
-      "Yes. SkillHub is fully responsive and optimized for mobile devices, so you can use it seamlessly on your phone or tablet.",
+      "Yes. Sensai is fully responsive and optimized for mobile devices, so you can use it seamlessly on your phone or tablet.",
   },
   {
     question: "Can I track my skill development progress?",

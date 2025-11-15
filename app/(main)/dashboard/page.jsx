@@ -1,7 +1,7 @@
 import { getIndustryInsights } from "@/actions/dashboard";
 import { getUserOnboardingStatus } from "@/actions/user";
 import { redirect } from "next/navigation";
-import DashboardView from "./components/dashboard-view.jsx";
+import DashboardView from "./components/dashboard-view";
 
 const IndustryInsightsPage = async () => {
     const {isOnboarded} = await getUserOnboardingStatus();

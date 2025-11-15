@@ -1,3 +1,4 @@
+// app/resume/_components/entry-form.jsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -75,7 +76,7 @@ export function EntryForm({ type, entries, onChange }) {
     error: improveError,
   } = useFetch(improveWithAI);
 
-
+  // Add this effect to handle the improvement result
   useEffect(() => {
     if (improvedContent && !isImproving) {
       setValue("description", improvedContent);
@@ -86,7 +87,7 @@ export function EntryForm({ type, entries, onChange }) {
     }
   }, [improvedContent, improveError, isImproving, setValue]);
 
-
+  // Replace handleImproveDescription with this
   const handleImproveDescription = async () => {
     const description = watch("description");
     if (!description) {

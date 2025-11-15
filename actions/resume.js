@@ -1,15 +1,15 @@
 "use server";
 
-import { auth } from "@clerk/nextjs/server";
 import { db } from "@/lib/prisma";
-import { revalidatePath } from "next/cache";
+import { auth } from "@clerk/nextjs/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { revalidatePath } from "next/cache";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-export async function saveResume(content){
-    const { userId } = await auth();
+export async function saveResume(content) {
+  const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
@@ -31,13 +31,13 @@ export async function saveResume(content){
         content,
       },
     });
+
     revalidatePath("/resume");
     return resume;
-}
-catch(error){
+  } catch (error) {
     console.error("Error saving resume:", error);
     throw new Error("Failed to save resume");
-}
+  }
 }
 
 export async function getResume() {
